@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="file://mymovies.owl"
+         xmlns="file://mymovies.owl#">
+
+<owl:Ontology rdf:about="file://mymovies.owl">
+  <owl:imports rdf:resource="http://www.semanticweb.org/ggf/ontologies/2022/5/movies"/>
+</owl:Ontology>
+
+<owl:ObjectProperty rdf:about="#hasMovie">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+  <rdfs:domain rdf:resource="#MovieList"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/ggf/ontologies/2022/5/movies#Movie"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#liked">
+  <rdfs:subPropertyOf rdf:resource="#hasMovie"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+  <rdfs:domain rdf:resource="#WatchedList"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/ggf/ontologies/2022/5/movies#Movie"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reallyLiked">
+  <rdfs:subPropertyOf rdf:resource="#hasMovie"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+  <rdfs:domain rdf:resource="#WatchedList"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/ggf/ontologies/2022/5/movies#Movie"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#disliked">
+  <rdfs:subPropertyOf rdf:resource="#hasMovie"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+  <rdfs:domain rdf:resource="#WatchedList"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/ggf/ontologies/2022/5/movies#Movie"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reallyDisliked">
+  <rdfs:subPropertyOf rdf:resource="#hasMovie"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+  <rdfs:domain rdf:resource="#WatchedList"/>
+  <rdfs:range rdf:resource="http://www.semanticweb.org/ggf/ontologies/2022/5/movies#Movie"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#MovieList">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RecommendedList">
+  <rdfs:subClassOf rdf:resource="#MovieList"/>
+</owl:Class>
+
+<owl:Class rdf:about="#WatchList">
+  <rdfs:subClassOf rdf:resource="#MovieList"/>
+</owl:Class>
+
+<owl:Class rdf:about="#WatchedList">
+  <rdfs:subClassOf rdf:resource="#MovieList"/>
+</owl:Class>
+
+<WatchList rdf:about="#My_Watchlist">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasMovie rdf:resource="http://www.semanticweb.org/ggf/ontologies/2022/5/movies#The_Matrix"/>
+</WatchList>
+
+<WatchedList rdf:about="#AlreadyWatched">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <liked rdf:resource="http://www.semanticweb.org/ggf/ontologies/2022/5/movies#The_Matrix"/>
+</WatchedList>
+
+<RecommendedList rdf:about="#YouShouldWatch">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</RecommendedList>
+
+
+</rdf:RDF>
